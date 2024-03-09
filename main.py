@@ -1,36 +1,10 @@
-import time
-from time import sleep
-import random
-from random import uniform
+from cars import carsMatch
 x="•"
 y=0
 z=0
-while int(y)<=150 and int(z)<=150:
-    y+=uniform(1,5)
-    sleep(0.1)
-    print(
-        x*15+">>>>>>>>>>>\n"+x*int(y)+
-        "┈┏┓┈██┈┈┈███┈┈┈┈\n"+x*int(y)+
-        "┈┃┃╭┻┻━━━┻━┻┏┓┈\n" +x*int(y)+
-        "┈┃┣╯┉┉╭━━┓╭┉┃┃┈\n"+x*int(y)+
-        "┈┃┣╮┉┉╰━━┛╰┉┃┃┈\n"+x*int(y)+
-        "┈┃┃╰┳┳━━━┳━┳┗┛┈\n" +x*int(y)+
-        "┈┗┛┈██┈┈┈███┈┈┈┈\n"+x*int(y)+
-        ">>>>>>>>>>>>>>>>>"
-    )
-
-    z += uniform(1,5)
-
-    print(
-        x*15+">>>>>>>>>>>\n"+x*int(z)+
-        "┈┏┓┈██┈┈┈███┈┈┈┈\n"+x*int(z)+
-        "┈┃┃╭┻┻━━━┻━┻┏┓┈\n" +x*int(z)+
-        "┈┃┣╯┉┉╭━━┓╭┉┃┃┈\n"+x*int(z)+
-        "┈┃┣╮┉┉╰━━┛╰┉┃┃┈\n"+x*int(z)+
-        "┈┃┃╰┳┳━━━┳━┳┗┛┈\n" +x*int(z)+
-        "┈┗┛┈██┈┈┈███┈┈┈┈\n"+x*int(z)+
-        ">>>>>>>>>>>>>>>>>"
-    )
+while int(y)<=137 and int(z)<=137:
+    carsMatch(x,y,z)
+    z,y=carsMatch(x,y,z)
 if z>y:
     print("ВЫИГРАЛА ВТОРАЯ МАШИНА!!!!"
           "\n╲╲╲╲┗━━┳┳━━┛╱╱╱╱"
@@ -51,14 +25,6 @@ else:
           "\n╲┃┊┣┻━━╰╯━━┻┫┊┃╱"
           "\n┈╰━┗━━━━━━━━┛━╯╱"
           "\nВЫИГРАЛА ПЕРВАЯ МАШИНА!!!!")
-
-
-
-
-
-
-
-
 
 
 
