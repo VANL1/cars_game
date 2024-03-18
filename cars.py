@@ -29,6 +29,14 @@ def carsMatch(x,y,z):
         "┈┗┛┈██┈┈┈███┈┈┈┈\n" + x * int(z) +
         ">>>>>>>>>>>>>>>>>"
     )
-    sleep(0.1)
+    sleep(0.07)
     os.system('cls')
     return z,y
+
+
+class car:
+    def __init__(self, model, speed, price):
+        self.model = model
+        self.speed = speed
+        self.price = price
+
