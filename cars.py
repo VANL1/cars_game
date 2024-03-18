@@ -4,32 +4,37 @@ from time import sleep
 import random
 from random import uniform
 def carsMatch(x,y,z):
-    y += uniform(1, 5)
+    y += uniform(0, 2)
     #sleep(0.1)
-    print(
-        x * 15 + ">>>>>>>>>>>\n" + x * int(y) +
+    print('>' * 155)
+    print(x * int(y) +
         "┈┏┓┈██┈┈┈███┈┈┈┈\n" + x * int(y) +
         "┈┃┃╭┻┻━━━┻━┻┏┓┈\n" + x * int(y) +
         "┈┃┣╯┉┉╭━━┓╭┉┃┃┈\n" + x * int(y) +
         "┈┃┣╮┉┉╰━━┛╰┉┃┃┈\n" + x * int(y) +
         "┈┃┃╰┳┳━━━┳━┳┗┛┈\n" + x * int(y) +
-        "┈┗┛┈██┈┈┈███┈┈┈┈\n" + x * int(y) +
-        ">>>>>>>>>>>>>>>>>"
+        "┈┗┛┈██┈┈┈███┈┈┈┈\n"
     )
 
-    z += uniform(1, 5)
+    z += uniform(0, 2)
 
-    print(
-        x * 15 + ">>>>>>>>>>>\n" + x * int(z) +
+    print('>'*155)
+    print('>' * 155)
+
+
+
+    print(x * int(z) +
         "┈┏┓┈██┈┈┈███┈┈┈┈\n" + x * int(z) +
         "┈┃┃╭┻┻━━━┻━┻┏┓┈\n" + x * int(z) +
         "┈┃┣╯┉┉╭━━┓╭┉┃┃┈\n" + x * int(z) +
         "┈┃┣╮┉┉╰━━┛╰┉┃┃┈\n" + x * int(z) +
         "┈┃┃╰┳┳━━━┳━┳┗┛┈\n" + x * int(z) +
-        "┈┗┛┈██┈┈┈███┈┈┈┈\n" + x * int(z) +
-        ">>>>>>>>>>>>>>>>>"
+        "┈┗┛┈██┈┈┈███┈┈┈┈\n"
     )
-    sleep(0.07)
+    print('>' * 155)
+
+
+    sleep(0.05)
     os.system('cls')
     return z,y
 
