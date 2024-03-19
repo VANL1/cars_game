@@ -4,6 +4,7 @@ from time import sleep
 import random
 from random import uniform
 def carsMatch(x,y,z):
+    os.system('cls')
     y += uniform(0, 2)
     #sleep(0.1)
     print('>' * 155)
@@ -34,8 +35,8 @@ def carsMatch(x,y,z):
     print('>' * 155)
 
 
-    sleep(0.05)
-    os.system('cls')
+    sleep(0.1)
+    
     return z,y
 
 
@@ -44,4 +45,5 @@ class car:
         self.model = model
         self.speed = speed
         self.price = price
+
 
