@@ -3,17 +3,28 @@ from main import win_los
 import config
 def shop_page():
     config.shop_ui()
-    #Товары магазина
-    print('0.Выйти из магазина')
-    print(" "*10,'1.Карыто, скорость: 1/10      250$')
-    print(" "*10,"2.Toyota Corolla(1992), скорость: 2/10      1000$")
     x = int(input())
-    if x == 1:
-        config.money-=250
-        print('Поздровляем, вы купили '"'Карыто'"'')
-        config.shop_ui()
-    elif x ==0:
-        pass
+    while x!=0:
+        if x == 1:
+            if config.money>250:
+                config.money-=250
+                config.shop_ui()
+                print('Поздровляем, вы купили '"'Карыто'"'')
+                x = int(input())
+            else:
+                print('Недостаточно средств')
+                x = int(input())
+        elif x==2:
+            if config.money>1000:
+                config.money-=1000
+                config.shop_ui()
+                print('Поздровляем, вы купили '"'Toyota Corolla(1992)'"'')
+                x = int(input())
+            else:
+                print('Недостаточно средств')
+                x = int(input())
+        elif x==0:
+            pass
 
 
 def main_pagee():
@@ -26,16 +37,16 @@ def main_pagee():
 .                                                                                                                                                          .''')
     print('.' * 156)
 
-    print('1.Начать игру')
-    print('2.Магазин')
+    print('1.Start game')
+    print('2.Shop')
 
     while True:
         a = int(input())
         if a == 1:
             win_los()
             a==0
-            print('1.Играть')
-            print('2.Магазин')
+            print('1.Play')
+            print('2.Shop')
             #a==int(input())
         elif a == 2:
             shop_page()
