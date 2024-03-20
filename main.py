@@ -1,4 +1,5 @@
 import random
+
 from cars import carsMatch
 import config
 import os
@@ -21,34 +22,34 @@ def win_los():
 
 
 
-    print('Выберете на какую машину ставить:')
+    print('Выберете машину на которую хотите поставить:')
     print("1.На первую                                             2.На вторую")
     select_car = int(input())
+    while select_car!=1 or 2:
+        select_car = int(input())
+        if select_car!=1 or 2:
+            print("Выберете машину на которую хотите поставить:")
+        elif select_car==0:
+            import menu
+            menu.main_pagee()
+        else:
+            pass
+
 
     print(" " * 67, "Your balance:", config.money)
     print('Сделайте ставку:')
     bet = int(input())
-    while config.money>config.money-bet:
-        select_car=select_car
-        if select_car==1:
-            select_car = 1
-            if bet > config.money:
-                print("Недостаточно стредств")
-                bet = int(input())
-                select_car = 0
-            else:
-                config.money-=bet
-                print(f"Вы поставили {bet}$ на первую машину")
-                sleep(3)
-        elif select_car==2:
-            if bet > config.money:
-                print("Недостаточно стредств")
-                bet = int(input())
-                select_car = 2
-            else:
-                config.money -= bet
-                print(f"Вы поставили {bet}$ на вторую машину")
-                sleep(3)
+
+    while bet>config.money:
+        if bet > config.money:
+            print("Недостаточно стредств")
+            bet = int(input())
+        else:
+            config.money -= bet
+            print(f"Вы поставили {bet}$")
+            sleep(3)
+
+
 
 
 
@@ -56,8 +57,8 @@ def win_los():
         carsMatch(x,y,z)
         z,y=carsMatch(x,y,z)
 
-    x_bet = random.uniform(9, 18)
-    x_bet = x_bet / 10
+    x_bet = random.uniform(10, 24)
+    x_bet = int(x_bet) / 10
     win_bet = x_bet * bet
     win_bet=int(win_bet)
     consolation = random.uniform(0, 100)
@@ -76,12 +77,13 @@ def win_los():
                                                            ┈╰━┗━━━━━━━━┛━╯╱
                                                        ВЫИГРАЛА ВТОРАЯ МАШИНА!!!!
         """)
-        if select_car == 1:
-            print(f'Ваша ставка сыграла, вы выиграли: {win_bet}$')
-            config.money += win_bet
+        if select_car == 2:
+            print(f'Ваша ставка сыграла')
+            print(f'Вы поставили {bet}$ на вторую машину, с коэфициентом {x_bet}')
+            print(f'И вы выиграли: {win_bet}$')
         else:
-            print(f'Ваша ставка не сыграла, вы проиграли: {win_bet}$ , но получили {consolation}$ как утешительный приз')
-            config.money -= win_bet
+            print(f'Ваша ставка не сыграла, вы проиграли: {bet}$ , но получили {consolation}$ как утешительный приз')
+            config.money -= bet
             config.money += consolation
             print('Теперь ваша баланс', str(config.money))
 
@@ -101,11 +103,13 @@ def win_los():
                                                         ВЫИГРАЛА ПЕРВАЯ МАШИНА!!!!
         """)
         if select_car==1:
-            print(f'Ваша ставка сыграла, вы выиграли: {win_bet}$')
+            print(f'Ваша ставка сыграла')
+            print(f'Вы поставили {bet}$ на первую машину, с коэфициентом {x_bet}')
+            print(f'И вы выиграли: {win_bet}$')
             config.money+=win_bet
         else:
-            print(f'Ваша ставка не сыграла, вы проиграли: {win_bet}$ , но получили {consolation}$ как утешительный приз')
-            config.money-=win_bet
+            print(f'Ваша ставка не сыграла, вы проиграли: {bet}$ , но получили {consolation}$ как утешительный приз')
+            config.money-=bet
             config.money += consolation
             print('Теперь ваша баланс', str(config.money))
 

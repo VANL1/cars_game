@@ -43,14 +43,13 @@ def main_pagee():
     while True:
         a = int(input())
         if a == 1:
+            a -= 1
             win_los()
-            a==0
             print('1.Play')
             print('2.Shop')
             #a==int(input())
         elif a == 2:
+            a -= 2
             shop_page()
-            a==0
-            main_pagee()
 
 main_pagee()
