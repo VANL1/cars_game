@@ -9,7 +9,7 @@ def shop_page():
             if config.money>250:
                 config.money-=250
                 config.shop_ui()
-                print('Поздровляем, вы купили '"'Карыто'"'')
+                print('Поздровляем, вы купили '"'Корыто'"'')
                 x = int(input())
             else:
                 print('Недостаточно средств')
@@ -25,6 +25,7 @@ def shop_page():
                 x = int(input())
         elif x==0:
             pass
+    main_pagee()
 
 
 def main_pagee():

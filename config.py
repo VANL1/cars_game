@@ -3,7 +3,7 @@ from cars import car
 
 
 
-car1 = car('Карыто', 1, 250)
+car1 = car('Корыто', 1, 250)
 car2 = car('Toyota Corolla(1992)', 2, 1000)
 
 

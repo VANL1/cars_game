@@ -25,15 +25,14 @@ def win_los():
     print('Выберете машину на которую хотите поставить:')
     print("1.На первую                                             2.На вторую")
     select_car = int(input())
-    while select_car!=1 or 2:
+    if select_car!=1 and select_car!=2:
+        print("Выберете машину на которую хотите поставить:")
         select_car = int(input())
-        if select_car!=1 or 2:
-            print("Выберете машину на которую хотите поставить:")
-        elif select_car==0:
-            import menu
-            menu.main_pagee()
-        else:
-            pass
+    elif select_car==0:
+        import menu
+        menu.main_pagee()
+    else:
+        pass
 
 
     print(" " * 67, "Your balance:", config.money)
@@ -44,7 +43,7 @@ def win_los():
         if bet > config.money:
             print("Недостаточно стредств")
             bet = int(input())
-        else:
+        elif bet < config.money:
             config.money -= bet
             print(f"Вы поставили {bet}$")
             sleep(3)
